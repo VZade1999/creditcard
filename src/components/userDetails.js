@@ -260,19 +260,6 @@ const CreditCardApplication = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Tehsil"
-                  name="address.tahsil"
-                  value={formData.address.tahsil}
-                  onChange={handleChange}
-                  variant="outlined"
-                  InputProps={{
-                    sx: { borderRadius: "12px" },
-                  }}
-                />
-              </Grid>
               <Grid item xs={6}>
                 <TextField
                   fullWidth
